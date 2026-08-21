@@ -4,7 +4,7 @@ Full-stack demo: **Node.js/Express + SQLite backend** + **React (Vite) frontend*
 
 Zero MySQL setup — SQLite file is created automatically.
 
-## Quick Start (2 terminals)
+
 
 ### Terminal 1 — Backend
 ```bash
@@ -12,7 +12,7 @@ cd backend-node
 npm install
 npm start
 ```
-You should see:
+then
 ```
 Connected to SQLite.
 Models synced.
@@ -23,7 +23,7 @@ Demo accounts (password for all = password123):
 Server running on http://localhost:8080
 ```
 
-### Terminal 2 — Frontend
+forr Terminal 2 — Frontend
 ```bash
 cd frontend
 npm install
@@ -31,7 +31,7 @@ npm run dev
 ```
 Open the URL Vite prints (usually http://localhost:5173)
 
-## Demo accounts (password = `password123` for all)
+heree we have Demo accounts (password = `password123` for all)
 
 | Username   | Role      | Use for                          |
 |------------|-----------|----------------------------------|

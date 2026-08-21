@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Build
+dist/
+build/
+frontend/dist/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+backend-node/travel.db
+
+# Env & secrets
+.env
+.env.local
+*.log
+
+# Uploads
+backend-node/uploads/*
+!backend-node/uploads/.gitkeep
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

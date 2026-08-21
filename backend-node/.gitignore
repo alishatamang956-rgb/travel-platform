@@ -1,0 +1,6 @@
+node_modules/
+travel.db
+.env
+uploads/*
+!uploads/.gitkeep
+*.log

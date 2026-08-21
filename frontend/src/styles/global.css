@@ -1,0 +1,246 @@
+/* ---- Design tokens -----------------------------------------------------
+   Identity: a Himalayan trekking guidebook, not a generic SaaS template.
+   Palette pulls from dusk mountain sky (ink), marigold garlands (saffron),
+   and terraced hillsides (teal). The five-color strip under the navbar
+   quotes the order of Tibetan Buddhist prayer flags — blue/white/red/
+   green/yellow for sky, air, fire, water, earth — used once, as the
+   page's signature, not sprinkled everywhere.
+------------------------------------------------------------------------- */
+:root {
+  --color-bg: #FBF9F4;
+  --color-surface: #FFFFFF;
+  --color-ink: #1C2B39;
+  --color-ink-soft: #56636E;
+  --color-saffron: #E8A33D;
+  --color-saffron-deep: #C97F1E;
+  --color-teal: #3E6B5C;
+  --color-teal-soft: #E4EEE9;
+  --color-line: #E4DFD3;
+  --color-danger: #B3432B;
+  --color-flag-blue: #3E6B8C;
+  --color-flag-red: #B3432B;
+  --color-flag-green: #4E7A52;
+  --color-flag-yellow: #E8A33D;
+
+  --font-display: 'Newsreader', Georgia, serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --radius: 6px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0 0 0.4em 0;
+}
+
+h1 { font-size: 2.4rem; letter-spacing: -0.01em; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.15rem; }
+
+a { color: var(--color-teal); text-decoration: none; }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---- signature: prayer-flag strip -------------------------------- */
+.flag-strip {
+  height: 5px;
+  display: flex;
+}
+.flag-strip span { flex: 1; }
+.flag-strip .b { background: var(--color-flag-blue); }
+.flag-strip .w { background: var(--color-surface); }
+.flag-strip .r { background: var(--color-flag-red); }
+.flag-strip .g { background: var(--color-flag-green); }
+.flag-strip .y { background: var(--color-flag-yellow); }
+
+/* ---- navbar -------------------------------------------------------- */
+.navbar {
+  background: var(--color-ink);
+  color: #fff;
+}
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.navbar .brand {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+}
+.navbar .brand span { color: var(--color-saffron); }
+.navbar nav { display: flex; gap: 20px; align-items: center; }
+.navbar nav a, .navbar nav button {
+  color: #E7E3D8;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.navbar nav a:hover, .navbar nav button:hover { color: var(--color-saffron); }
+
+/* ---- buttons --------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn-primary { background: var(--color-saffron); color: var(--color-ink); }
+.btn-primary:hover { background: var(--color-saffron-deep); }
+.btn-outline { background: transparent; border-color: var(--color-ink); color: var(--color-ink); }
+.btn-outline:hover { background: var(--color-ink); color: #fff; }
+.btn-danger { background: var(--color-danger); color: #fff; }
+.btn-teal { background: var(--color-teal); color: #fff; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ---- cards ------------------------------------------------------------- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.place-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.place-card:hover { box-shadow: 0 6px 18px rgba(28,43,57,0.08); transform: translateY(-2px); }
+.place-card .body { padding: 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.place-card .meta-row {
+  display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--font-mono);
+  font-size: 0.72rem; color: var(--color-ink-soft);
+}
+.tag {
+  background: var(--color-teal-soft);
+  color: var(--color-teal);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+.tag.status-PENDING { background: #FBEFE0; color: var(--color-saffron-deep); }
+.tag.status-FLAGGED { background: #F6E1DC; color: var(--color-danger); }
+.tag.status-APPROVED { background: var(--color-teal-soft); color: var(--color-teal); }
+
+/* ---- layout: sidebar + grid -------------------------------------------- */
+.browse-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+@media (max-width: 800px) {
+  .browse-layout { grid-template-columns: 1fr; }
+}
+.place-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+/* ---- forms -------------------------------------------------------------- */
+label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 4px; color: var(--color-ink-soft); }
+input, select, textarea {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  background: #fff;
+  color: var(--color-ink);
+}
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--color-saffron);
+  outline-offset: 1px;
+}
+.field { margin-bottom: 14px; }
+.field-row { display: flex; gap: 12px; }
+.field-row > .field { flex: 1; }
+
+/* ---- tabs (structured review sections) ---------------------------------- */
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--color-line); margin-bottom: 16px; flex-wrap: wrap; }
+.tabs button {
+  padding: 9px 14px;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+.tabs button.active { color: var(--color-ink); border-color: var(--color-saffron); font-weight: 600; }
+
+/* ---- topographic hero motif (signature element) -------------------------- */
+.hero {
+  position: relative;
+  background: var(--color-ink);
+  color: #fff;
+  overflow: hidden;
+  padding: 64px 0 56px;
+}
+.hero .container { position: relative; z-index: 1; }
+.hero p.lede { color: #D8D2C2; max-width: 520px; font-size: 1.05rem; }
+.hero .contours {
+  position: absolute; inset: 0; opacity: 0.18; pointer-events: none;
+}
+
+.empty-state {
+  border: 1px dashed var(--color-line);
+  border-radius: var(--radius);
+  padding: 40px;
+  text-align: center;
+  color: var(--color-ink-soft);
+}
+
+.error-banner {
+  background: #F6E1DC;
+  color: var(--color-danger);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+.section { padding: 36px 0; }
+
+table.admin-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+table.admin-table th, table.admin-table td {
+  text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--color-line);
+}

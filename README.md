@@ -1,6 +1,6 @@
-# YatraBata — Nepal Travel Intelligence Platform
+# YatraBato — Nepal Travel Intelligence Platform
 
-Full-stack demo: **Node.js/Express + SQLite backend** + **React (Vite) frontend**.
+Full-stack : **Node.js/Express + SQLite backend** + **React (Vite) frontend**.
 
 Zero MySQL setup — SQLite file is created automatically.
 
@@ -12,7 +12,7 @@ cd backend-node
 npm install
 npm start
 ```
-You should see:
+then:
 ```
 Connected to SQLite.
 Models synced.
@@ -29,7 +29,7 @@ cd frontend
 npm install
 npm run dev
 ```
-Open the URL Vite prints (usually http://localhost:5173)
+the URL Vite prints (usually http://localhost:5173)
 
 ## Demo accounts (password = `password123` for all)
 
@@ -40,14 +40,6 @@ Open the URL Vite prints (usually http://localhost:5173)
 | sabin_k    | USER      | Normal traveler                  |
 | demo       | USER      | Normal traveler                  |
 
-## 3-minute demo script for judges
-
-1. Open http://localhost:5173 → Home page with featured places
-2. Click **Browse** → try filters (type, difficulty, vehicle access)
-3. Click any place → see details + structured reviews
-4. **Log in** as `admin` / `password123` (use the quick-fill buttons)
-5. Go to **Admin** → approve the pending place **"Panchase Hike"**
-6. Go back to Browse → Panchase Hike now appears (refresh if needed)
 
 ## Project structure
 

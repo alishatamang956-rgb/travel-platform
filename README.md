@@ -1,4 +1,4 @@
-# YatraBata — Nepal Travel Intelligence Platform
+# YatraBato — Nepal Travel Intelligence Platform
 
 Full-stack demo: **Node.js/Express + SQLite backend** + **React (Vite) frontend**.
 
